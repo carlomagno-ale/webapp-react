@@ -12,12 +12,21 @@ body {
 }
 
 .container {
-  width: 60%;
+  width: 60% !important;
+}
+
+header {
+  background-color: var(--medium-light);
+
+  img {
+    max-width: 15rem;
+    padding-block: 1rem;
+  }
 }
 
 .card {
 
-  border-radius: 0;
+  border-radius: 0 !important;
   border: none;
 
   img {
@@ -28,11 +37,12 @@ body {
 }
 
 .card-img-top {
-  border-radius: 0;
+  border-radius: 0 !important;
   border: none;
 }
 
 .footer-up {
+
   background-color: var(--medium-light);
 
   a {
