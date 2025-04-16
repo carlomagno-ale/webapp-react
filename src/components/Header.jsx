@@ -5,9 +5,9 @@ export default function Header() {
     return (
 
         <header>
-            <div className="container mb-4 text-center">
+            <div className="container text-center">
                 <a className="navbar-brand" href="/">
-                    <img src="./public/logoipsum-custom-logo.svg" alt="logo" />
+                    <img src="/logoipsum-custom-logo.svg" alt="logo" />
                 </a>
             </div>
         </header>

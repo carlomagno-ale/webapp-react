@@ -70,7 +70,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="text-center p-2 footer-low">
+            <div className="text-center p-2 footer-low py-3">
                 © 2025 Copyright
             </div>
         </footer>
