@@ -1,13 +1,36 @@
-
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+
+    const [movies, setMovies] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:3000/api/v1/movies')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setMovies(data);
+            })
+    }, []);
+
 
     return (
 
         <>
-            <div className="home">
-                <h1>Home</h1>
-                <i className="bi bi-alarm-fill text-danger fs-5">benvenuto</i>
+            <div className="container d-flex justify-content-center">
+                <div className="row justify-content-center">
+                    {movies.map((movie) => (
+                        <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 d-flex justify-content-center" key={movie.id}>
+                            <div className="card">
+                                <img
+                                    src={`http://localhost:3000/images/${movie.image}`}
+                                    className="card-img-top"
+                                    alt={movie.title}
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )

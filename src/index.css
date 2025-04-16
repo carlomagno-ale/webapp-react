@@ -1,11 +1,29 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
-
 :root {
   --light: white;
 }
 
 body {
   min-height: 100vh;
+}
+
+.container {
+  width: 60%;
+}
+
+.card {
+
+  border-radius: 0;
+
+  img {
+
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.card-img-top {
+  border-radius: 0;
 }
