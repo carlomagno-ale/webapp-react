@@ -3,6 +3,8 @@
 
 :root {
   --light: white;
+  --medium-light: rgb(241, 241, 241);
+  --medium: rgb(195, 195, 195);
 }
 
 body {
@@ -16,6 +18,7 @@ body {
 .card {
 
   border-radius: 0;
+  border: none;
 
   img {
 
@@ -26,4 +29,22 @@ body {
 
 .card-img-top {
   border-radius: 0;
+  border: none;
+}
+
+.footer-up {
+  background-color: var(--medium-light);
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-low {
+
+  background-color: var(--medium);
 }
