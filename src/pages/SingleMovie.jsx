@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export default function SingleMovie() {
 
@@ -38,6 +38,17 @@ export default function SingleMovie() {
 
     return (
         <>
+            <Link to={`/`} className="text-decoration-none text-dark">
+                <div className="container mt-3 text-center">
+                    <button
+                        className="btn btn-outline-dark"
+                    >
+                        <i className="bi bi-arrow-left"></i> Torna alla Homepage
+                    </button>
+
+                </div>
+            </Link>
+
             {/* jumbotron */}
             <div className="jumbotron p-5">
                 <div className="container">
