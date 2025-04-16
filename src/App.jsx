@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layouts/DefaultLayout"
+import Home from "./pages/Home"
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
       <Routes>
         <Route Component={DefaultLayout}>
 
-          <Route path="/" element={<h1>movies</h1>} />
+          <Route path="/" Component={Home} />
 
         </Route>
       </Routes>
