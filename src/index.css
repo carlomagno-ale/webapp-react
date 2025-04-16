@@ -27,11 +27,13 @@ header {
 .card {
 
   border-radius: 0 !important;
-  border: none;
+  border: none !important;
+  background-color: black !important;
+
 
   img {
 
-    height: 400px;
+    max-height: 400px;
     object-fit: cover;
   }
 }
@@ -41,9 +43,14 @@ header {
   border: none;
 }
 
+footer {
+  background-color: var(--medium-light);
+}
+
 .footer-up {
 
-  background-color: var(--medium-light);
+  width: 80%;
+  margin: auto;
 
   a {
     text-decoration: none;
