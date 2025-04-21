@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import MovieReview from '../components/MovieReview';
 
 export default function SingleMovie() {
 
@@ -18,23 +19,6 @@ export default function SingleMovie() {
             })
             .catch(error => console.error('Nessun film trovato', error));
     }, [id]);
-
-    //funzione per creare la valutazione
-
-    function star(vote) {
-        const stars = [];
-        const empty = [];
-
-        for (let i = 0; i < vote; i++) {
-            stars.push(<i key={`star-${i}`} className="bi bi-star-fill text-warning"></i>);
-        }
-
-        for (let i = 0; i < 5 - vote; i++) {
-            empty.push(<i key={`empty-${i}`} className="bi bi-star text-warning"></i>);
-        }
-
-        return [...stars, ...empty];
-    }
 
     return (
         <>
@@ -77,11 +61,7 @@ export default function SingleMovie() {
                     <h2 className='text-center mb-3'>Reviews</h2>
                     <ul className="list-group">
                         {movie.reviews.map((review) => (
-                            <li key={review.id} className="list-group-item">
-                                <strong><i className="bi bi-person"></i> {review.name}:</strong>
-                                <p>{review.text}</p>
-                                <span>Voto: {star(review.vote)}</span>
-                            </li>
+                            <MovieReview key={review.id} userReview={review} />
                         ))}
                     </ul>
                 </div>
