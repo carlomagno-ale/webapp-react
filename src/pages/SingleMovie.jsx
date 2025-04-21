@@ -54,8 +54,55 @@ export default function SingleMovie() {
                     </div>
                 </div>
             </div>
+            {/* aggiungi recensione */}
+            <div className='user-input'>
+                <div className="container mb-5 user-review py-4">
+                    <h2 className="text-center mb-3">Add your review</h2>
+                    <form action="POST">
 
-            {/* reviews */}
+                        <div className="mb-3">
+                            <label htmlFor="username" className="form-label">Username</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="username"
+                                name="username"
+                                placeholder='Username'
+                                required
+                            />
+                        </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="rating" className="form-label">Rating</label>
+                            <input
+                                type="number"
+                                className="form-control"
+                                id="rating"
+                                name="rating"
+                                min="1"
+                                max="5"
+                                placeholder='1 to 5 star'
+                                required />
+                        </div>
+
+                        <div className="mb-3">
+                            <label htmlFor="review" className="form-label">Your Review</label>
+                            <textarea
+                                className="form-control"
+                                id="review"
+                                name="review"
+                                rows="3"
+                                placeholder='Write your movie review...'
+                                required>
+                            </textarea>
+                        </div>
+
+                        <button type="submit" className="btn btn-dark">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+
+            {/* recensioni */}
             {movie?.reviews && movie.reviews.length > 0 ? (
                 <div className="container mb-5 reviews">
                     <h2 className='text-center mb-3'>Reviews</h2>

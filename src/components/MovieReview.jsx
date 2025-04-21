@@ -9,7 +9,7 @@ export default function MovieReview({ userReview }) {
         <li key={id} className="list-group-item">
             <strong><i className="bi bi-person"></i> {name}:</strong>
             <p>{text}</p>
-            <span>Voto: {StarRating(vote)}</span>
+            <span>Vote: {StarRating(vote)}</span>
         </li>
 
     )
