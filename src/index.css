@@ -25,6 +25,10 @@ header {
   }
 }
 
+main {
+  min-height: calc(100vh - 385px);
+}
+
 .card {
 
   border-radius: 0 !important;
@@ -80,7 +84,6 @@ footer {
 
   max-width: 40rem !important;
 }
-
 
 .user-input {
 

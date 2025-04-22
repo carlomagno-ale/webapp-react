@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import MovieReview from '../components/MovieReview';
+
 
 export default function SingleMovie() {
 
@@ -10,12 +12,17 @@ export default function SingleMovie() {
     //stato per conservare i dati del film
     const [movie, setMovies] = useState({})
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         fetch(`http://localhost:3000/api/v1/movies/${id}`)
             .then(response => response.json())
             .then(data => {
-                setMovies(data)
-                console.log(data)
+
+                if (data?.error) {
+                    navigate('/404')
+                }
+                setMovies(data);
             })
             .catch(error => console.error('Nessun film trovato', error));
     }, [id]);

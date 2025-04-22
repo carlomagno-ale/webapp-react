@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DefaultLayout from "./layouts/DefaultLayout"
 import Home from "./pages/Home"
 import SingleMovie from "./pages/SingleMovie"
+import NotFound from "./pages/NotFound"
 
 
-function App() {
+export default function App() {
 
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
 
           <Route path="/" Component={Home} />
           <Route path="/movies/:id" Component={SingleMovie} />
+          <Route path="/*" Component={NotFound} />
 
         </Route>
       </Routes>
@@ -20,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+
