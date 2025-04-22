@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import MovieCard from '../components/MovieCard';
 
 
 export default function Home() {
@@ -18,24 +19,13 @@ export default function Home() {
 
     return (
 
-        <>
-            <div className="container d-flex justify-content-center pt-4">
-                <div className="row justify-content-center">
-                    {movies.map((movie) => (
-                        <div className="col-12 col-sm-6 col-md-4 col-lg-4 mb-4 d-flex justify-content-center" key={movie.id}>
-                            <Link to={`/movies/${movie.id}`} className="text-decoration-none text-dark">
-                                <div className="card">
-                                    <img
-                                        src={`http://localhost:3000/images/${movie.image}`}
-                                        className="card-img-top"
-                                        alt={movie.title}
-                                    />
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+        <div className="container d-flex justify-content-center pt-4">
+            <div className="row justify-content-center">
+                {movies.map((movie) => (
+                    <MovieCard key={movie.id} movie={movie} />
+                ))}
             </div>
-        </>
+        </div>
+
     )
 }
