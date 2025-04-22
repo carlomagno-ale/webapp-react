@@ -10,7 +10,7 @@ export default function MovieCard({ movie }) {
             <Link to={`/movies/${id}`} className="text-decoration-none text-dark">
                 <div className="card">
                     <img
-                        src={`http://localhost:3000/images/${image}`}
+                        src={image ? `http://localhost:3000/images/${image}` : '/placeholder.jpg'}
                         className="card-img-top"
                         alt={title}
                     />

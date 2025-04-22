@@ -39,7 +39,7 @@ export default function SingleMovie() {
                     <div className="row">
                         <div className="col-md-4">
                             <img
-                                src={`http://localhost:3000/images/${movie.image}`}
+                                src={movie.image ? `http://localhost:3000/images/${movie.image}` : '/placeholder.jpg'}
                                 alt={movie.title}
                                 className="img-fluid"
                             />
