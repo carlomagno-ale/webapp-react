@@ -3,9 +3,14 @@ import { useParams, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import MovieReview from '../components/MovieReview';
 import MovieReviewForm from '../components/reviews/MovieReviewForm';
+import GlobalContext from '../contexts/GlobalContext';
+import { useContext } from 'react';
 
 
 export default function SingleMovie() {
+
+    //loader
+    const { setIsLoading } = useContext(GlobalContext)
 
     //prende l'id dall'url 
     const { id } = useParams()
@@ -19,14 +24,14 @@ export default function SingleMovie() {
         fetch(`http://localhost:3000/api/v1/movies/${id}`)
             .then(response => response.json())
             .then(data => {
-
                 if (data?.error) {
-                    navigate('/404')
+                    navigate('/404');
                 }
                 setMovies(data);
             })
-            .catch(error => console.error('Nessun film trovato', error));
-    }, [id]);
+            .catch(error => console.error('Nessun film trovato', error))
+            .finally(() => { setIsLoading(false) });
+    }, []);
 
     return (
         <>
