@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header"
 import GlobalContext from "../contexts/GlobalContext";
-import LoaderComponent from "../components/reviews/LoaderComponent";
+import LoaderComponent from "../components/LoaderComponent";
 
 function DefaultLayout() {
 

@@ -11,6 +11,7 @@ export default function () {
             </div>
             <div className="spinner-grow text-danger" role="status">
             </div>
+
         </div>
     )
 }

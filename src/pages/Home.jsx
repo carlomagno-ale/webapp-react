@@ -17,7 +17,7 @@ export default function Home() {
             .then(data => {
                 console.log(data);
                 setMovies(data);
-
+            }).then(() => {
                 setIsLoading(false)
             })
     }, []);
